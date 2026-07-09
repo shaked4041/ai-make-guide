@@ -14,7 +14,74 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      automation_requests: {
+        Row: {
+          apps_involved: string | null
+          created_at: string
+          description: string
+          experience_level: string
+          id: string
+          main_goal: string
+          user_id: string
+          user_type: string
+        }
+        Insert: {
+          apps_involved?: string | null
+          created_at?: string
+          description: string
+          experience_level: string
+          id?: string
+          main_goal: string
+          user_id: string
+          user_type: string
+        }
+        Update: {
+          apps_involved?: string | null
+          created_at?: string
+          description?: string
+          experience_level?: string
+          id?: string
+          main_goal?: string
+          user_id?: string
+          user_type?: string
+        }
+        Relationships: []
+      }
+      generated_plans: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          model: string | null
+          request_id: string
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          model?: string | null
+          request_id: string
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          model?: string | null
+          request_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "generated_plans_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: false
+            referencedRelation: "automation_requests"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
