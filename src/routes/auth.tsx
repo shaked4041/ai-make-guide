@@ -1,9 +1,9 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Zap } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
 import { useSession } from "@/hooks/use-session";
+import { Logo } from "@/components/Logo";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -80,14 +80,11 @@ function AuthPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm">
-        <Link to="/" className="mb-8 flex items-center justify-center gap-2 font-semibold">
-          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground">
-            <Zap className="h-4 w-4" />
-          </span>
-          <span className="text-lg font-[family-name:var(--font-display)]">Make Copilot</span>
+        <Link to="/" className="mb-8 flex justify-center">
+          <Logo size="md" />
         </Link>
 
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="rounded-xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
           <h1 className="text-lg font-semibold">
             {mode === "login" ? "Welcome back" : "Create your account"}
           </h1>
