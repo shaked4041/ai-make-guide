@@ -250,3 +250,33 @@
   background-color: var(--color-secondary);
   font-weight: 600;
 }
+
+/* Dark variant used on the plan detail page (dark aesthetic) */
+.plan-content-dark { color: rgb(255 255 255 / 0.88); }
+.plan-content-dark h1,
+.plan-content-dark h2,
+.plan-content-dark h3 { color: #fff; }
+.plan-content-dark a {
+  color: oklch(0.82 0.14 258);
+  text-decoration-color: oklch(0.82 0.14 258 / 0.4);
+}
+.plan-content-dark li::marker { color: rgb(255 255 255 / 0.35); }
+.plan-content-dark code {
+  background-color: rgb(255 255 255 / 0.06);
+  border-color: rgb(255 255 255 / 0.1);
+  color: #fff;
+}
+.plan-content-dark pre {
+  background-color: rgb(0 0 0 / 0.35);
+  border-color: rgb(255 255 255 / 0.08);
+  color: rgb(255 255 255 / 0.9);
+}
+.plan-content-dark hr { border-top-color: rgb(255 255 255 / 0.1); }
+.plan-content-dark blockquote {
+  border-left-color: rgb(255 255 255 / 0.2);
+  color: rgb(255 255 255 / 0.6);
+}
+.plan-content-dark th,
+.plan-content-dark td { border-color: rgb(255 255 255 / 0.1); }
+.plan-content-dark th { background-color: rgb(255 255 255 / 0.04); color: #fff; }
+.plan-content-dark strong { color: #fff; }
